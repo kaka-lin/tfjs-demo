@@ -2,8 +2,12 @@
 
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
+.config/
+.npm/
+
+# config
+dev.js
+.env
 
 # testing
 /coverage
@@ -21,3 +25,23 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# vscode
+.vscode
+
+*.pyc
+*.pyo
+*~
+
+# model
+*.pb
+*.pbtxt
+*.tar.gz
+*.h5
+*.tflite
+
+# data
+data
+
+# db
+*.sqlite3
