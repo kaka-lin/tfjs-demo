@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    image: kakalin/tfjs-demo:0.1.0
+    volumes:
+      - ".:/root"
+    environment:
+      - NODE_ENV=dev
+    ports:
+      - "3000:3000" # host:container
+    entrypoint:
+      - /root/docker-entrypoint.sh
+    command: npm run start
