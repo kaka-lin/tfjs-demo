@@ -11,7 +11,7 @@ class Model extends Component {
   }
 
   async runModel() {
-    const model = await tf.loadGraphModel('https://raw.githubusercontent.com/kaka-lin/EfficientSAM-tf2-demo/main/weights/web_model/model.json');
+    const model = await tf.loadGraphModel('https://raw.githubusercontent.com/kaka-lin/EfficientSAM-tf2-demo/main/weights/web_model/efficient_sam_vitt/model.json');
 
     // Get content image
     let image = new Image(1024, 1024, 3);
