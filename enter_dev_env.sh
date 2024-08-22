@@ -21,6 +21,10 @@ elif [ -n "$HASH_STOPPED" ];then
 else
     echo "existing container not found, creating a new one, named $CONTAINER"
     # rm -rf node_modules
-    docker-compose -f $COMPOSE_FILE run --service-ports --name=$CONTAINER app
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        docker compose -f $COMPOSE_FILE run --service-ports --name=$CONTAINER app
+    else
+        docker-compose -f $COMPOSE_FILE run --service-ports --name=$CONTAINER app
+    fi
 fi
 echo "see you, use 'docker rm $CONTAINER' to kill the dev container or 'docker-compose -f $COMPOSE_FILE down' to kill both the postgres and the dev container if you want a fresh env next time"
